@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: ${DATABASE_URL}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,prometheus"
+  metrics:
+    enable:
+      jvm: true  # Включить метрики JVM
+      process: true
+      system: true
+  endpoint:
+    prometheus:
+      access: read_only
+
+wg-server:
+  private-key: f5nsr6zmExp4k+yJw3fvsYL2u8Rcf7MYDPocV9ugKaU=

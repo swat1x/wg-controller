@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: my_super_secret_passowrd
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/wgserver
+
+wg-server:
+  private-key: f5nsr6zmExp4k+yJw3fvsYL2u8Rcf7MYDPocV9ugKaU=
+  server-endpoint: alpha.nl.vpnet.space

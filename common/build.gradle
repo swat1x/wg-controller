@@ -1,0 +1,6 @@
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    implementation 'net.moznion:wireguard-keytool:0.1.0'
+}

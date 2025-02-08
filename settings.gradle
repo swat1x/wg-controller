@@ -1,0 +1,5 @@
+rootProject.name = 'wg-controller'
+
+include 'service'
+include 'common'
+

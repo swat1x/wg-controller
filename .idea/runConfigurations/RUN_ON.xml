@@ -1,0 +1,47 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RUN ON" type="docker-deploy" factoryName="dockerfile" server-name="Delton">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="wg-controller" />
+        <option name="containerName" value="wgservice-dev" />
+        <option name="envVars">
+          <list>
+            <DockerEnvVarImpl>
+              <option name="name" value="DATABASE_USER" />
+              <option name="value" value="root" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="DATABASE_PASSWORD" />
+              <option name="value" value="my_super_secret_passowrd" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="DATABASE_URL" />
+              <option name="value" value="jdbc:mariadb://localhost:3306/wgserver" />
+            </DockerEnvVarImpl>
+          </list>
+        </option>
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="8080" />
+              <option name="hostPort" value="8080" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="commandLineOptions" value="--cap-add NET_ADMIN --cap-add SYS_MODULE --network host --device /dev/net/tun" />
+        <option name="sourceFilePath" value="Dockerfile" />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/etc/wireguard" />
+              <option name="hostPath" value="/etc/wireguard" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="bootJar" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
+    </method>
+  </configuration>
+</component>
